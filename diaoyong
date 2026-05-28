@@ -1,90 +1,87 @@
-<mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
-  <root>
-    <mxCell id="0"/>
-    <mxCell id="1" parent="0"/>
-
-    <!-- 第一行：main 在最上方居中 -->
-    <mxCell id="main" value="main" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1e1e1;strokeWidth=2" vertex="1" parent="1">
-      <mxGeometry x="350" y="20" width="100" height="40" as="geometry"/>
-    </mxCell>
-
-    <!-- 第二行：左三 + 中间send_data + 右三 -->
-    <mxCell id="wait_for_event" value="wait_for_event" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="50" y="120" width="120" height="40" as="geometry"/>
-    </mxCell>
-    <mxCell id="get_packet" value="get_packet" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="200" y="120" width="120" height="40" as="geometry"/>
-    </mxCell>
-    <mxCell id="recv_frame" value="recv_frame" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="350" y="120" width="120" height="40" as="geometry"/>
-    </mxCell>
-
-    <!-- send_data 严格正中间，高亮 -->
-    <mxCell id="send_data" value="send_data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ff69b4;strokeWidth=2" vertex="1" parent="1">
-      <mxGeometry x="500" y="120" width="120" height="40" as="geometry"/>
-    </mxCell>
-
-    <mxCell id="定时器管理" value="定时器管理" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="650" y="120" width="120" height="40" as="geometry"/>
-    </mxCell>
-    <mxCell id="put_packet" value="put_packet" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="800" y="120" width="120" height="40" as="geometry"/>
-    </mxCell>
-    <mxCell id="between" value="between" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="950" y="120" width="120" height="40" as="geometry"/>
-    </mxCell>
-
-    <!-- 第三行：send_data 的子节点 -->
-    <mxCell id="put_frame" value="put_frame" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="440" y="220" width="120" height="40" as="geometry"/>
-    </mxCell>
-
-    <!-- 第四行：put_frame 的子节点 -->
-    <mxCell id="crc32" value="crc32" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="380" y="320" width="100" height="40" as="geometry"/>
-    </mxCell>
-    <mxCell id="send_frame" value="send_frame" style="rounded=0;whiteSpace=wrap;html=1" vertex="1" parent="1">
-      <mxGeometry x="500" y="320" width="120" height="40" as="geometry"/>
-    </mxCell>
-
-    <!-- 连线：main → 所有子节点 -->
-    <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="main" target="wait_for_event">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-    <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="main" target="get_packet">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-    <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="main" target="recv_frame">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-    <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="main" target="send_data">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-    <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="main" target="定时器管理">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-    <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="main" target="put_packet">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-    <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="main" target="between">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-
-    <!-- 连线：send_data → put_frame、send_data → 定时器管理 -->
-    <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="send_data" target="put_frame">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-    <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="send_data" target="定时器管理">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-
-    <!-- 连线：put_frame → crc32、put_frame → send_frame -->
-    <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="put_frame" target="crc32">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-    <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1" edge="1" parent="1" source="put_frame" target="send_frame">
-      <mxGeometry relative="1" as="geometry"/>
-    </mxCell>
-
-  </root>
-</mxGraphModel>
+<mxfile host="app.diagrams.net">
+  <diagram id="Wtk2lUSkNwWg1UkXisfi" name="第 1 页">
+    <mxGraphModel dx="1158" dy="1877" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2myR3QvqOHw7VKMawGDo-3" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="recv_frame">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="main" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeWidth=2;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=#1D3557;" value="main" vertex="1">
+          <mxGeometry height="40" width="100" x="510" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="wait_for_event" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="wait_for_event" vertex="1">
+          <mxGeometry height="40" width="120" x="50" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="get_packet" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="get_packet" vertex="1">
+          <mxGeometry height="40" width="120" x="200" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="recv_frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="recv_frame" vertex="1">
+          <mxGeometry height="40" width="120" x="350" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="2myR3QvqOHw7VKMawGDo-5" edge="1" parent="1" source="send_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeColor=#457B9D;fontColor=#1D3557;fillColor=#A8DADC;" target="2myR3QvqOHw7VKMawGDo-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="send_data" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A8DADC;strokeWidth=2;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=#1D3557;" value="send_frame3" vertex="1">
+          <mxGeometry height="40" width="120" x="500" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="定时器管理" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="定时器管理" vertex="1">
+          <mxGeometry height="40" width="120" x="650" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="put_packet" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="put_packet" vertex="1">
+          <mxGeometry height="40" width="120" x="800" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="between" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="between" vertex="1">
+          <mxGeometry height="40" width="120" x="950" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="put_frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="put_frame" vertex="1">
+          <mxGeometry height="40" width="120" x="420" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="crc32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="crc32" vertex="1">
+          <mxGeometry height="40" width="100" x="364" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="send_frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="send_frame" vertex="1">
+          <mxGeometry height="40" width="120" x="490" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="wait_for_event" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="get_packet" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="-60" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="send_data" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="定时器管理" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="put_packet" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="main" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="between" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="send_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="put_frame" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="send_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="定时器管理" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="put_frame" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="crc32" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="put_frame" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;strokeColor=#457B9D;fontColor=default;" target="send_frame" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2myR3QvqOHw7VKMawGDo-6" edge="1" parent="1" source="2myR3QvqOHw7VKMawGDo-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#457B9D;fontColor=#1D3557;fillColor=#A8DADC;" target="between">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2myR3QvqOHw7VKMawGDo-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#A8DADC;strokeColor=#457B9D;fontColor=#1D3557;" value="fill_sack_bitmap" vertex="1">
+          <mxGeometry height="40" width="120" x="580" y="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
