@@ -1,0 +1,140 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="TCP-4way-handshake" name="TCP四次挥手">
+    <mxGraphModel dx="1300" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- 左侧客户进程A -->
+        <mxCell id="colA" value="" style="endArrow=none;html=1;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="180" y="50" width="2" height="850" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="labelA" value="客户&#xa;进程A" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="120" y="10" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="dotsA_top" value="..." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="170" y="20" width="20" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateA1" value="ESTABLISHED&#xa;已建立连接" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8B8F2;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="50" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateA2" value="FIN-WAIT1&#xa;终止等待1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFB8B8;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="200" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateA3" value="FIN-WAIT2&#xa;终止等待2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF6666;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="300" width="200" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateA4" value="TIME-WAIT&#xa;时间等待" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="200" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateA5" value="CLOSE&#xa;连接关闭" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="timeA" value="t" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="170" y="720" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="wait2MSL" value="等待&#xa;2MSL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="20" y="500" width="60" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="arrow_wait" value="" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="580" as="sourcePoint"/>
+            <mxPoint x="80" y="580" as="targetPoint"/>
+            <mxPoint x="80" y="650" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 右侧服务器进程B -->
+        <mxCell id="colB" value="" style="endArrow=none;html=1;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="900" y="50" width="2" height="850" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="labelB" value="服务器&#xa;进程B" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="840" y="10" width="100" height="40" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="dotsB_top" value="..." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="890" y="20" width="20" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateB1" value="ESTABLISHED&#xa;已建立连接" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8B8F2;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="800" y="50" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateB2" value="CLOSE-WAIT&#xa;关闭等待" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00CCCC;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="800" y="150" width="200" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateB3" value="LAST-ACK&#xa;最后确认" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF00CC;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="800" y="300" width="200" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="stateB4" value="CLOSE&#xa;连接关闭" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="800" y="450" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="timeB" value="t" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="890" y="720" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- 数据传输双向箭头 -->
+        <mxCell id="arrow_data" value="数据传送(双向)" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="100" as="sourcePoint"/>
+            <mxPoint x="800" y="100" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 挥手1 -->
+        <mxCell id="arrow1" value="挥手① SYN=0, ACK=1, FIN=1, seq=9999, ack=5600" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="170" as="sourcePoint"/>
+            <mxPoint x="900" y="220" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 挥手2 -->
+        <mxCell id="arrow2" value="挥手② SYN=0, ACK=1, FIN=0, seq=5600, ack=10000" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="270" as="sourcePoint"/>
+            <mxPoint x="180" y="240" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 数据传送单向 -->
+        <mxCell id="arrow_data_single" value="数据传送(单向)&#xa;假设传了2200B" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#00FFFF;fontSize=12;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="320" as="sourcePoint"/>
+            <mxPoint x="300" y="320" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 挥手3 -->
+        <mxCell id="arrow3" value="挥手③ SYN=0, ACK=1, FIN=1, seq=7800, ack=10000" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="370" as="sourcePoint"/>
+            <mxPoint x="180" y="340" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 挥手4 -->
+        <mxCell id="arrow4" value="挥手④ SYN=0, ACK=1, FIN=0, seq=10000, ack=7801" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="420" as="sourcePoint"/>
+            <mxPoint x="900" y="400" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
