@@ -4,65 +4,42 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="labelA" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" value="客户端" vertex="1">
-          <mxGeometry height="40" width="100" x="120" y="10" as="geometry" />
-        </mxCell>
         <mxCell id="stateA1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8B8F2;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;ESTABLISHED&lt;br&gt;已建立连接&lt;/font&gt;" vertex="1">
           <mxGeometry height="100" width="200" x="80" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="stateA2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFB8B8;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;FIN-WAIT1&lt;br&gt;终止等待1&lt;/font&gt;" vertex="1">
+        <mxCell id="stateA2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFB8B8;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;FIN-WAIT&lt;br&gt;终止等待&lt;/font&gt;" vertex="1">
           <mxGeometry height="170" width="200" x="80" y="150" as="geometry" />
         </mxCell>
-        <mxCell id="stateA3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF6666;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;FIN-WAIT2&lt;br&gt;终止等待2&lt;/font&gt;" vertex="1">
-          <mxGeometry height="150" width="200" x="80" y="319" as="geometry" />
-        </mxCell>
         <mxCell id="stateA4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;font style=&quot;&quot;&gt;TIME-WAIT&lt;br&gt;时间等待&lt;/font&gt;2MSL&lt;/font&gt;" vertex="1">
-          <mxGeometry height="150" width="200" x="80" y="469" as="geometry" />
+          <mxGeometry height="150" width="200" x="80" y="320" as="geometry" />
         </mxCell>
         <mxCell id="stateA5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;CLOSE&lt;br&gt;连接关闭&lt;/font&gt;" vertex="1">
-          <mxGeometry height="100" width="200" x="80" y="619" as="geometry" />
-        </mxCell>
-        <mxCell id="labelB" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" value="服务器" vertex="1">
-          <mxGeometry height="40" width="100" x="840" y="10" as="geometry" />
+          <mxGeometry height="100" width="200" x="80" y="470" as="geometry" />
         </mxCell>
         <mxCell id="stateB1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B8B8F2;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;ESTABLISHED&lt;br&gt;已建立连接&lt;/font&gt;" vertex="1">
-          <mxGeometry height="190" width="200" x="800" y="50" as="geometry" />
+          <mxGeometry height="190" width="200" x="740" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="stateB2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00CCCC;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;CLOSE-WAIT&lt;br&gt;关闭等待&lt;/font&gt;" vertex="1">
-          <mxGeometry height="150" width="200" x="800" y="236" as="geometry" />
-        </mxCell>
-        <mxCell id="stateB3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;LAST-ACK&lt;br&gt;最后确认&lt;/font&gt;" vertex="1">
-          <mxGeometry height="150" width="200" x="800" y="386" as="geometry" />
+        <mxCell id="stateB3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;WAIT-ACK&lt;br&gt;等待确认&lt;/font&gt;" vertex="1">
+          <mxGeometry height="150" width="200" x="740" y="240" as="geometry" />
         </mxCell>
         <mxCell id="stateB4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCCCCC;strokeColor=#666666;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;CLOSE&lt;br&gt;连接关闭&lt;/font&gt;" vertex="1">
-          <mxGeometry height="100" width="200" x="800" y="536" as="geometry" />
+          <mxGeometry height="100" width="200" x="740" y="390" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_data" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=2;labelBackgroundColor=#ffffff;fontSize=14;shape=flexArrow;fillColor=#fff2cc;strokeColor=#d6b656;" value="数据传送(双向)">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="320" y="100" as="sourcePoint" />
-            <mxPoint x="760" y="100" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="arrow1" edge="1" parent="1" source="stateA2" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="stateB1" value="挥手① SYN=0, ACK=1, FIN=1, seq=9999, ack=5600">
+        <mxCell id="arrow1" edge="1" parent="1" source="stateA2" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="stateB1" value="挥手① SYN=0, ACK=1, FIN=1, seq=2565003313, ack=4101845318">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="180" y="170" as="sourcePoint" />
             <mxPoint x="900" y="220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow2" edge="1" parent="1" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="stateA3" value="挥手② SYN=0, ACK=1, FIN=0, seq=5600, ack=10000">
+        <mxCell id="arrow2" edge="1" parent="1" source="stateB3" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" value="挥手②+③ SYN=0, ACK=1, FIN=1, seq=4101845318, ack=2565003314">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="800" y="240" as="sourcePoint" />
-            <mxPoint x="180" y="240" as="targetPoint" />
+            <mxPoint x="280" y="319" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="arrow3" edge="1" parent="1" source="stateB3" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" target="stateA3" value="挥手③ SYN=0, ACK=1, FIN=1, seq=7800, ack=10000">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="900" y="370" as="sourcePoint" />
-            <mxPoint x="180" y="340" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="arrow4" edge="1" parent="1" source="stateA4" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="stateB3" value="挥手④ SYN=0, ACK=1, FIN=0, seq=10000, ack=7801">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="arrow4" edge="1" parent="1" source="stateA4" style="endArrow=block;html=1;strokeWidth=2;fillColor=#000000;labelBackgroundColor=#ffffff;fontSize=14;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="stateB4" value="挥手④ SYN=0, ACK=1, FIN=0, seq=2565003314, ack=4101845319">
+          <mxGeometry relative="1" x="0.0042" y="-5" as="geometry">
+            <mxPoint as="offset" />
             <mxPoint x="180" y="420" as="sourcePoint" />
             <mxPoint x="900" y="400" as="targetPoint" />
           </mxGeometry>
