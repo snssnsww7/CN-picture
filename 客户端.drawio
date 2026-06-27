@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="第 1 页" id="SkoqE08RwlAOn17_IyKS">
+    <mxGraphModel dx="975" dy="1765" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 标题 -->
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#1565C0;" value="客户端请求处理流程" vertex="1">
+          <mxGeometry height="30" width="300" x="450" y="20" as="geometry" />
+        </mxCell>
+
+        <!-- 主流程：中间列 -->
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#2196F3;strokeWidth=1.5;fontColor=#1565C0;fontSize=12;" value="接收客户端DNS查询报文" vertex="1">
+          <mxGeometry height="45" width="220" x="490" y="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;strokeWidth=1.5;fontColor=#2E7D32;fontSize=12;" value="解析DNS报文&#xa;string_to_dnsstruct()" vertex="1">
+          <mxGeometry height="50" width="220" x="490" y="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-30" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF9800;strokeWidth=2;fontColor=#E65100;fontSize=12;fontStyle=1;" value="A记录查询？" vertex="1">
+          <mxGeometry height="65" width="180" x="510" y="215" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#00BCD4;strokeWidth=1.5;fontColor=#00838F;fontSize=12;" value="查询cache" vertex="1">
+          <mxGeometry height="45" width="150" x="525" y="310" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-57" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;strokeWidth=2;fontColor=#2E7D32;fontSize=12;fontStyle=1;" value="缓存命中？" vertex="1">
+          <mxGeometry height="60" width="160" x="520" y="380" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF8E1;strokeColor=#FFC107;strokeWidth=1.5;fontColor=#FF8F00;fontSize=12;" value="查询本地Trie树&#xa;(dnsrelay.txt)" vertex="1">
+          <mxGeometry height="50" width="160" x="520" y="470" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-62" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF9800;strokeWidth=2;fontColor=#E65100;fontSize=12;fontStyle=1;" value="本地命中？" vertex="1">
+          <mxGeometry height="60" width="160" x="520" y="550" as="geometry" />
+        </mxCell>
+
+        <!-- 左列：命中分支 -->
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;strokeWidth=1.5;fontColor=#2E7D32;fontSize=12;" value="构造DNS应答报文&#xa;dnsstruct_to_string()" vertex="1">
+          <mxGeometry height="50" width="170" x="230" y="385" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#2196F3;strokeWidth=1.5;fontColor=#1565C0;fontSize=12;" value="发送应答给客户端" vertex="1">
+          <mxGeometry height="45" width="170" x="230" y="460" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9C27B0;strokeWidth=1.5;fontColor=#6A1B9A;fontSize=12;" value="写入日志" vertex="1">
+          <mxGeometry height="40" width="170" x="230" y="530" as="geometry" />
+        </mxCell>
+
+        <!-- 右列：转发分支 -->
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#E91E63;strokeWidth=1.5;fontColor=#AD1457;fontSize=12;" value="分配新ID&#xa;reset_id()" vertex="1">
+          <mxGeometry height="45" width="150" x="780" y="310" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L9odGmSbxvGLxKcXGjxZ-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#E91E63;strokeWidth=1.5;fontColor=#AD1457;fontSize=12;" value="保存查询报文&#xa;save_query()" vertex="1">
+          <mxGeometry height="45" width="150" x="780" y="380" as="geometry" />
+        </mxCell>
+
+        <!-- 新增：转发给远程DNS服务器 -->
+        <mxCell id="forward_dns" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#F44336;strokeWidth=2;fontColor=#C62828;fontSize=12;fontStyle=1;" value="转发给远程DNS服务器" vertex="1">
+          <mxGeometry height="50" width="180" x="765" y="450" as="geometry" />
+        </mxCell>
+
+        <!-- 连接线：主流程纵向 -->
+        <mxCell id="e1" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-2" target="L9odGmSbxvGLxKcXGjxZ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2196F3;strokeWidth=1.5;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e2" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-3" target="L9odGmSbxvGLxKcXGjxZ-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4CAF50;strokeWidth=1.5;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- A记录是 → 查询cache -->
+        <mxCell id="e3" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-30" target="L9odGmSbxvGLxKcXGjxZ-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00BCD4;strokeWidth=1.5;endArrow=classic;endFill=1;fontSize=11;fontColor=#00838F;" value="是">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- A记录否 → 分配新ID（右路） -->
+        <mxCell id="e4" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-30" target="L9odGmSbxvGLxKcXGjxZ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F44336;strokeWidth=1.5;endArrow=classic;endFill=1;fontSize=10;fontColor=#C62828;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="否(非A记录直接转发)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="247" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 查询cache → 缓存命中？ -->
+        <mxCell id="e5" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-56" target="L9odGmSbxvGLxKcXGjxZ-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00BCD4;strokeWidth=1.5;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 缓存命中 → 构造应答（左路） -->
+        <mxCell id="e6" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-57" target="L9odGmSbxvGLxKcXGjxZ-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4CAF50;strokeWidth=1.5;endArrow=classic;endFill=1;fontSize=11;fontColor=#2E7D32;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" value="命中">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 缓存未命中 → 查询本地Trie树 -->
+        <mxCell id="e7" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-57" target="L9odGmSbxvGLxKcXGjxZ-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FFC107;strokeWidth=1.5;endArrow=classic;endFill=1;fontSize=11;fontColor=#FF8F00;" value="未命中">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 查询本地Trie树 → 本地命中？ -->
+        <mxCell id="e8" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-58" target="L9odGmSbxvGLxKcXGjxZ-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FFC107;strokeWidth=1.5;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 本地命中 → 构造应答（左路） -->
+        <mxCell id="e9" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-62" target="L9odGmSbxvGLxKcXGjxZ-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4CAF50;strokeWidth=1.5;endArrow=classic;endFill=1;fontSize=11;fontColor=#2E7D32;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" value="命中">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 本地未命中 → 分配新ID（右路） -->
+        <mxCell id="e10" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-62" target="L9odGmSbxvGLxKcXGjxZ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#F44336;strokeWidth=1.5;endArrow=classic;endFill=1;fontSize=11;fontColor=#C62828;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" value="未命中">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 左列纵向：构造应答 → 发送 → 写日志 -->
+        <mxCell id="e11" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-35" target="L9odGmSbxvGLxKcXGjxZ-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4CAF50;strokeWidth=1.5;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e12" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-36" target="L9odGmSbxvGLxKcXGjxZ-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2196F3;strokeWidth=1.5;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 右列纵向：分配ID → 保存 → 转发 -->
+        <mxCell id="e13" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-38" target="L9odGmSbxvGLxKcXGjxZ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E91E63;strokeWidth=1.5;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e14" edge="1" parent="1" source="L9odGmSbxvGLxKcXGjxZ-39" target="forward_dns" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#E91E63;strokeWidth=1.5;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
